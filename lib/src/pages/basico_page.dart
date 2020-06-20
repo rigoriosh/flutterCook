@@ -1,6 +1,6 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_cook/src/pages/scroll_pages.dart';
 
 class BasicoPage extends StatelessWidget {
   //const BasicoPage({Key key}) : super(key: key);
@@ -11,25 +11,43 @@ class BasicoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            _imagen(),
-            _primeraFila(),
-            _segundaFila(),
-            _campoTexto(),
-            _campoTexto(),
-            _campoTexto(),
-            _campoTexto(),
-            _campoTexto(),
-            _campoTexto(),
-            _campoTexto(),
-            _campoTexto(),
-            _campoTexto(),
-            _campoTexto(),
-            _campoTexto(),
-          ],
+      body: Container(
+        color: Colors.blue[100],
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              _imagen(),
+              _primeraFila(),
+              _segundaFila(),
+              _campoTexto(),
+              _campoTexto(),
+              _campoTexto(),
+              _campoTexto(),
+              _campoTexto(),
+              _campoTexto(),
+              _campoTexto(),
+              _campoTexto(),
+              _campoTexto(),
+              _campoTexto(),
+              _campoTexto(),
+            ],
+          ),
         ),
+      ),
+      /* floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.queue_play_next, color: Colors.black,),
+        onPressed: (){
+          print("object");
+          Navigator.pushNamed(context, PaginaScroll.routName)
+        }), */
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+          Navigator.pushNamed(context, PaginaScroll.routName);
+          print("object");
+        },
+        child: Icon(Icons.queue_play_next, color: Colors.black,),
+        //backgroundColor: Colors.green,
       ),
     );
   }
@@ -38,11 +56,11 @@ class BasicoPage extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Image(
-          image: NetworkImage(
-              'https://www.xtrafondos.com/wallpapers/amanecer-anime-chica-silueta-paisaje-3721.jpg'),
-              height: 350.0,
-              fit: BoxFit.cover,
-              ),
+        image: NetworkImage(
+            'https://www.xtrafondos.com/wallpapers/amanecer-anime-chica-silueta-paisaje-3721.jpg'),
+        height: 350.0,
+        fit: BoxFit.cover,
+      ),
     );
   }
 
